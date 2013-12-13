@@ -1,6 +1,7 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+# Text
+*~
+*#
+# Eclipse IDE
+.settings
+# Maven
+target
