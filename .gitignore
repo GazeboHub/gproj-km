@@ -3,6 +3,8 @@
 *#
 # Eclipse IDE
 .settings
+.classpath
+bin
 # Maven
 /target
-/.classpath
+target
