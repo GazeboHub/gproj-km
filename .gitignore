@@ -8,3 +8,5 @@ bin
 # Maven
 /target
 target
+# Protege
+catalog-v001.xml

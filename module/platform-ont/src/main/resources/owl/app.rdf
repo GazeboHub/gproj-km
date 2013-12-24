@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY a "http://code.gazebo.ws/ont/app.rdf#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY p "http://code.gazebo.ws/ont/platform.rdf#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://code.gazebo.ws/ont/app.rdf#"
+     xml:base="http://code.gazebo.ws/ont/app.rdf"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:p="http://code.gazebo.ws/ont/platform.rdf#"
+     xmlns:a="http://code.gazebo.ws/ont/app.rdf#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://code.gazebo.ws/ont/app.rdf">
+        <rdfs:label xml:lang="en">Platform Applications Ontology</rdfs:label>
+        <owl:imports rdf:resource="http://code.gazebo.ws/ont/platform.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#availablePlatform -->
+
+    <owl:ObjectProperty rdf:about="&a;availablePlatform">
+        <rdfs:label xml:lang="en">available on platform</rdfs:label>
+        <rdfs:domain rdf:resource="&a;SoftwareApplication"/>
+        <rdfs:range rdf:resource="&p;Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#platformAvailable -->
+
+    <owl:ObjectProperty rdf:about="&a;platformAvailable">
+        <rdfs:label xml:lang="en">platform of availability</rdfs:label>
+        <rdfs:range rdf:resource="&a;SoftwareApplication"/>
+        <rdfs:domain rdf:resource="&p;Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#CmdApp -->
+
+    <owl:Class rdf:about="&a;CmdApp">
+        <rdfs:label xml:lang="en">Command Line Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&a;SoftwareApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#DeskApp -->
+
+    <owl:Class rdf:about="&a;DeskApp">
+        <rdfs:label xml:lang="en">Desktop Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&a;DesktopComponent"/>
+        <rdfs:subClassOf rdf:resource="&a;SoftwareApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#Desktop -->
+
+    <owl:Class rdf:about="&a;Desktop">
+        <rdfs:label xml:lang="en">Desktop Platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;CompositePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#DesktopComponent -->
+
+    <owl:Class rdf:about="&a;DesktopComponent">
+        <rdfs:label xml:lang="en">Desktop Component</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&a;availablePlatform"/>
+                <owl:someValuesFrom rdf:resource="&a;Desktop"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&p;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#FirmwareApplication -->
+
+    <owl:Class rdf:about="&a;FirmwareApplication">
+        <rdfs:label xml:lang="en">Firmware Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;FirmwareComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#Library -->
+
+    <owl:Class rdf:about="&a;Library">
+        <rdfs:label xml:lang="en">Software Library</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;SoftwareComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#Mobile -->
+
+    <owl:Class rdf:about="&a;Mobile">
+        <rdfs:label xml:lang="en">Mobile Platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;CompositePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#MobileApp -->
+
+    <owl:Class rdf:about="&a;MobileApp">
+        <rdfs:label xml:lang="en">Mobile Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&a;MobileComponent"/>
+        <rdfs:subClassOf rdf:resource="&a;SoftwareApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#MobileComponent -->
+
+    <owl:Class rdf:about="&a;MobileComponent">
+        <rdfs:label xml:lang="en">Mobile Component</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&a;availablePlatform"/>
+                <owl:someValuesFrom rdf:resource="&a;Mobile"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&p;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#OS -->
+
+    <owl:Class rdf:about="&a;OS">
+        <rdfs:label xml:lang="en">Operating System</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;SoftwareComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#Server -->
+
+    <owl:Class rdf:about="&a;Server">
+        <rdfs:label xml:lang="en">Server Platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&p;CompositePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#ServerApp -->
+
+    <owl:Class rdf:about="&a;ServerApp">
+        <rdfs:label xml:lang="en">Server Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&a;ServerComponent"/>
+        <rdfs:subClassOf rdf:resource="&a;SoftwareApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#ServerComponent -->
+
+    <owl:Class rdf:about="&a;ServerComponent">
+        <rdfs:label xml:lang="en">Server Component</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&a;availablePlatform"/>
+                <owl:someValuesFrom rdf:resource="&a;Server"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&p;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#SoftwareApplication -->
+
+    <owl:Class rdf:about="&a;SoftwareApplication">
+        <rdfs:label xml:lang="en">A software library implemented such as to be executed and optionally interacted with directly by a component user</rdfs:label>
+        <rdfs:label xml:lang="en">Software Application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&a;Library"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

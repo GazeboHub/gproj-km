@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://code.gazebo.ws/ont/platform.rdf#"
+     xml:base="http://code.gazebo.ws/ont/platform.rdf"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://code.gazebo.ws/ont/platform.rdf">
+        <rdfs:label xml:lang="en">Electronic Platforms Ontology</rdfs:label>
+        <rdfs:comment xml:lang="en">To Do: Consider incorporating concepts from SysML, as to define a concept of abstract ports for component I/O</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#componentPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#componentPlatform">
+        <rdfs:label xml:lang="en">component of platform</rdfs:label>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <owl:inverseOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#platformComponent -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#platformComponent">
+        <rdfs:label xml:lang="en">platform component</rdfs:label>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#revision -->
+
+    <owl:DatatypeProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#revision">
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:range rdf:resource="&xsd;token"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#Component -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#CompositePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#CompositePlatform">
+        <rdfs:label xml:lang="en">Composite Platform</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <rdfs:comment xml:lang="en">platform comprised of firmware and software components</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent">
+        <rdfs:label xml:lang="en">Firmware Component</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://en.wikipedia.org/wiki/Firmware</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Microcode component comprising loadable instructions for a microprocessor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform">
+        <rdfs:label xml:lang="en">Firmware Platform</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                                <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent"/>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#Platform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#Platform">
+        <rdfs:label xml:lang="en">Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent">
+        <rdfs:label xml:lang="en">Software Component</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform">
+        <rdfs:label xml:lang="en">Software Platform</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                                <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#platformComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
