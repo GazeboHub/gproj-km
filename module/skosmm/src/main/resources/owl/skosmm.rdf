@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY mm "http://code.gazebo.ws/ont/skosmm.rdf#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://code.gazebo.ws/ont/skosmm.rdf#"
+     xml:base="http://code.gazebo.ws/ont/skosmm.rdf"
+     xmlns:mm="http://code.gazebo.ws/ont/skosmm.rdf#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://code.gazebo.ws/ont/skosmm.rdf">
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeAnnotation -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeAnnotation">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeColor -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeColor">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodePresentationAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeComment -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeComment">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodeAnnotation"/>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeIcon -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeIcon">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodePresentationAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeLabel -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeLabel">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&terms;title"/>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;label"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodePresentationAnnotation -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodePresentationAnnotation">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodeAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#nodeShape -->
+
+    <owl:AnnotationProperty rdf:about="&mm;nodeShape">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodePresentationAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#subnodeArcStyle -->
+
+    <owl:AnnotationProperty rdf:about="&mm;subnodeArcStyle">
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;nodePresentationAnnotation"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="&terms;title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#childNode -->
+
+    <owl:ObjectProperty rdf:about="&mm;childNode">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:range rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;childNodeTransitive"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;narrower"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#childNodeTransitive -->
+
+    <owl:ObjectProperty rdf:about="&mm;childNodeTransitive">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;narrowerTransitive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#hasTopNode -->
+
+    <owl:ObjectProperty rdf:about="&mm;hasTopNode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraph"/>
+        <rdfs:range rdf:resource="&mm;ConceptGraphNode"/>
+        <owl:inverseOf rdf:resource="&mm;topNodeOf"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;hasTopConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#inMindmap -->
+
+    <owl:ObjectProperty rdf:about="&mm;inMindmap">
+        <rdfs:range rdf:resource="&mm;Mindmap"/>
+        <rdfs:domain rdf:resource="&mm;MindmapNode"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;inScheme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#parentNode -->
+
+    <owl:ObjectProperty rdf:about="&mm;parentNode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:range rdf:resource="&mm;MindmapNode"/>
+        <owl:inverseOf rdf:resource="&mm;childNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;parentNodeTransitive"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;broader"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#parentNodeTransitive -->
+
+    <owl:ObjectProperty rdf:about="&mm;parentNodeTransitive">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraphNode"/>
+        <owl:inverseOf rdf:resource="&mm;childNodeTransitive"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;broaderTransitive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#topNodeOf -->
+
+    <owl:ObjectProperty rdf:about="&mm;topNodeOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="&mm;ConceptGraph"/>
+        <rdfs:domain rdf:resource="&mm;ConceptGraphNode"/>
+        <rdfs:subPropertyOf rdf:resource="&mm;inMindmap"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;topConceptOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#CalloutNode -->
+
+    <owl:Class rdf:about="&mm;CalloutNode">
+        <rdfs:subClassOf rdf:resource="&mm;MindmapNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#ConceptGraph -->
+
+    <owl:Class rdf:about="&mm;ConceptGraph">
+        <rdfs:subClassOf rdf:resource="&skos;ConceptScheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#ConceptGraphNode -->
+
+    <owl:Class rdf:about="&mm;ConceptGraphNode">
+        <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#Mindmap -->
+
+    <owl:Class rdf:about="&mm;Mindmap">
+        <rdfs:subClassOf rdf:resource="&mm;ConceptGraph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/skosmm.rdf#MindmapNode -->
+
+    <owl:Class rdf:about="&mm;MindmapNode">
+        <rdfs:subClassOf rdf:resource="&mm;ConceptGraphNode"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
