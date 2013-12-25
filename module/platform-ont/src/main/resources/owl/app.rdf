@@ -44,8 +44,8 @@
 
     <owl:ObjectProperty rdf:about="&a;availablePlatform">
         <rdfs:label xml:lang="en">available on platform</rdfs:label>
+        <rdfs:domain rdf:resource="&p;Component"/>
         <rdfs:range rdf:resource="&p;Platform"/>
-        <rdfs:domain rdf:resource="&p;SoftwareComponent"/>
     </owl:ObjectProperty>
     
 
@@ -99,8 +99,8 @@
     <owl:ObjectProperty rdf:about="&a;platformAvailable">
         <rdfs:label xml:lang="en">platform of availability</rdfs:label>
         <owl:inverseOf rdf:resource="&a;availablePlatform"/>
+        <rdfs:range rdf:resource="&p;Component"/>
         <rdfs:domain rdf:resource="&p;Platform"/>
-        <rdfs:range rdf:resource="&p;SoftwareComponent"/>
     </owl:ObjectProperty>
     
 
