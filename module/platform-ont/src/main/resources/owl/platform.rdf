@@ -155,10 +155,10 @@
     
 
 
-    <!-- http://code.gazebo.ws/ont/platform.rdf#CompositePlatform -->
+    <!-- http://code.gazebo.ws/ont/platform.rdf#CompositeComponent -->
 
-    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#CompositePlatform">
-        <rdfs:label xml:lang="en">Composite Platform</rdfs:label>
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#CompositeComponent">
+        <rdfs:label xml:lang="en">Composite Component</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -173,7 +173,16 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#CompositePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#CompositePlatform">
+        <rdfs:label xml:lang="en">Composite Platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#CompositeComponent"/>
         <rdfs:comment xml:lang="en">platform comprised of firmware and software components</rdfs:comment>
     </owl:Class>
     
@@ -183,17 +192,6 @@
 
     <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent">
         <rdfs:label xml:lang="en">Firmware Component</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
-        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://en.wikipedia.org/wiki/Firmware</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Microcode component comprising loadable instructions for a microprocessor.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform -->
-
-    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform">
-        <rdfs:label xml:lang="en">Firmware Platform</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -212,6 +210,17 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://en.wikipedia.org/wiki/Firmware</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Microcode component comprising loadable instructions for a microprocessor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform">
+        <rdfs:label xml:lang="en">Firmware Platform</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwareComponent"/>
         <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
     </owl:Class>
@@ -268,15 +277,6 @@
 
     <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent">
         <rdfs:label xml:lang="en">Software Component</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
-    </owl:Class>
-    
-
-
-    <!-- http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform -->
-
-    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform">
-        <rdfs:label xml:lang="en">Software Platform</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -295,9 +295,46 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform">
+        <rdfs:label xml:lang="en">Software Platform</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
         <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#FooPlatform -->
+
+    <owl:NamedIndividual rdf:about="http://code.gazebo.ws/ont/platform.rdf#FooPlatform">
+        <rdf:type rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <platformComponent rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FooSoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#FooSoft -->
+
+    <owl:NamedIndividual rdf:about="http://code.gazebo.ws/ont/platform.rdf#FooSoft">
+        <rdf:type rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
