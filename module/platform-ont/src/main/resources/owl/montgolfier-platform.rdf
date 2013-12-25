@@ -6,6 +6,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY app "http://code.gazebo.ws/ont/app.rdf#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY platform "http://code.gazebo.ws/ont/platform.rdf#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY mg "http://code.gazebo.ws/ont/montgolfier-platform.rdf#" >
 ]>
@@ -13,6 +14,7 @@
 
 <rdf:RDF xmlns="http://code.gazebo.ws/ont/montgolfier-platform.rdf#"
      xml:base="http://code.gazebo.ws/ont/montgolfier-platform.rdf"
+     xmlns:platform="http://code.gazebo.ws/ont/platform.rdf#"
      xmlns:app="http://code.gazebo.ws/ont/app.rdf#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -44,7 +46,7 @@
 
     <owl:Class rdf:about="&mg;MobilePhonePlatform">
         <rdfs:label xml:lang="en">Mobile Phone Platform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform"/>
+        <rdfs:subClassOf rdf:resource="&platform;FirmwarePlatform"/>
     </owl:Class>
     
 
@@ -53,7 +55,7 @@
 
     <owl:Class rdf:about="&mg;TabletPCPlatform">
         <rdfs:label xml:lang="en">Tablet PC Platform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#FirmwarePlatform"/>
+        <rdfs:subClassOf rdf:resource="&platform;FirmwarePlatform"/>
     </owl:Class>
     
 
@@ -72,7 +74,7 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#Dropbox -->
 
     <owl:NamedIndividual rdf:about="&mg;Dropbox">
-        <rdf:type rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+        <rdf:type rdf:resource="&platform;Service"/>
     </owl:NamedIndividual>
     
 
@@ -119,11 +121,20 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JCRService -->
+
+    <owl:NamedIndividual rdf:about="&mg;JCRService">
+        <rdf:type rdf:resource="&platform;Service"/>
+        <rdfs:label xml:lang="en">Java Content Repository (JCR) Service</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaDeskPlatform -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaDeskPlatform">
         <rdf:type rdf:resource="&app;DesktopComponent"/>
-        <rdf:type rdf:resource="http://code.gazebo.ws/ont/platform.rdf#SoftwarePlatform"/>
+        <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Desktop Platform</rdfs:label>
         <rdfs:comment xml:lang="en">component model, informal - not component (TO DO: Fix that type assignment)</rdfs:comment>
         <rdfs:comment xml:lang="en">contrast with Java platform on Android</rdfs:comment>
@@ -210,7 +221,9 @@
         <rdf:type rdf:resource="&app;ServerComponent"/>
         <rdfs:label xml:lang="en">ModeShape</rdfs:label>
         <rdfs:comment xml:lang="en">provides JCR and WebDAV services (TO DO: Model that in the ontology)</rdfs:comment>
+        <platform:providesService rdf:resource="&mg;JCRService"/>
         <app:availablePlatform rdf:resource="&mg;JavaPlatform"/>
+        <platform:providesService rdf:resource="&mg;WebDAV"/>
     </owl:NamedIndividual>
     
 
@@ -270,7 +283,7 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#WebDAV -->
 
     <owl:NamedIndividual rdf:about="&mg;WebDAV">
-        <rdf:type rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+        <rdf:type rdf:resource="&platform;Service"/>
         <rdfs:label xml:lang="en">WebDAV</rdfs:label>
     </owl:NamedIndividual>
     
