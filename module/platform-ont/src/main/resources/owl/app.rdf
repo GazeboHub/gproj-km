@@ -75,6 +75,7 @@
     <owl:ObjectProperty rdf:about="&a;platformAvailable">
         <rdfs:label xml:lang="en">platform of availability</rdfs:label>
         <rdfs:range rdf:resource="&a;SoftwareApplication"/>
+        <owl:inverseOf rdf:resource="&a;availablePlatform"/>
         <rdfs:domain rdf:resource="&p;Platform"/>
     </owl:ObjectProperty>
     
