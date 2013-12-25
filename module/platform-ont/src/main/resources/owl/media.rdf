@@ -4,7 +4,7 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY media "http://code.gazebo.ws/ont/media.rdf#" >
+    <!ENTITY m "http://code.gazebo.ws/ont/media.rdf#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -16,7 +16,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:media="http://code.gazebo.ws/ont/media.rdf#">
+     xmlns:m="http://code.gazebo.ws/ont/media.rdf#">
     <owl:Ontology rdf:about="http://code.gazebo.ws/ont/media.rdf">
         <rdfs:label xml:lang="en">Core Media Types Ontology</rdfs:label>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/info/rfc2046</rdfs:seeAlso>
@@ -38,33 +38,33 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#hasMediaType -->
 
-    <owl:ObjectProperty rdf:about="&media;hasMediaType">
+    <owl:ObjectProperty rdf:about="&m;hasMediaType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="en">has media type</rdfs:label>
-        <rdfs:range rdf:resource="&media;MediaType"/>
-        <rdfs:domain rdf:resource="&media;StreamEntity"/>
+        <rdfs:range rdf:resource="&m;MediaType"/>
+        <rdfs:domain rdf:resource="&m;StreamEntity"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#mediaTypeParameter -->
 
-    <owl:ObjectProperty rdf:about="&media;mediaTypeParameter">
+    <owl:ObjectProperty rdf:about="&m;mediaTypeParameter">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">media type parameter</rdfs:label>
-        <rdfs:domain rdf:resource="&media;MediaType"/>
-        <rdfs:range rdf:resource="&media;Parameter"/>
+        <rdfs:domain rdf:resource="&m;MediaType"/>
+        <rdfs:range rdf:resource="&m;Parameter"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#mediaTypeSubtype -->
 
-    <owl:ObjectProperty rdf:about="&media;mediaTypeSubtype">
+    <owl:ObjectProperty rdf:about="&m;mediaTypeSubtype">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">media subtype</rdfs:label>
-        <rdfs:range rdf:resource="&media;MediaType"/>
-        <rdfs:domain rdf:resource="&media;MediaType"/>
+        <rdfs:range rdf:resource="&m;MediaType"/>
+        <rdfs:domain rdf:resource="&m;MediaType"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -72,35 +72,35 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#mediaTypeSupertype -->
 
-    <owl:ObjectProperty rdf:about="&media;mediaTypeSupertype">
+    <owl:ObjectProperty rdf:about="&m;mediaTypeSupertype">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="en">media supertype</rdfs:label>
-        <rdfs:range rdf:resource="&media;MediaType"/>
-        <rdfs:domain rdf:resource="&media;MediaType"/>
-        <owl:inverseOf rdf:resource="&media;mediaTypeSubtype"/>
+        <rdfs:range rdf:resource="&m;MediaType"/>
+        <rdfs:domain rdf:resource="&m;MediaType"/>
+        <owl:inverseOf rdf:resource="&m;mediaTypeSubtype"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#parameterMediaType -->
 
-    <owl:ObjectProperty rdf:about="&media;parameterMediaType">
+    <owl:ObjectProperty rdf:about="&m;parameterMediaType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="en">parameter media type</rdfs:label>
-        <rdfs:range rdf:resource="&media;MediaType"/>
-        <rdfs:domain rdf:resource="&media;Parameter"/>
-        <owl:inverseOf rdf:resource="&media;mediaTypeParameter"/>
+        <rdfs:range rdf:resource="&m;MediaType"/>
+        <rdfs:domain rdf:resource="&m;Parameter"/>
+        <owl:inverseOf rdf:resource="&m;mediaTypeParameter"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#syntacticallyEquivalentType -->
 
-    <owl:ObjectProperty rdf:about="&media;syntacticallyEquivalentType">
+    <owl:ObjectProperty rdf:about="&m;syntacticallyEquivalentType">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label xml:lang="en">syntactically equivalent type</rdfs:label>
-        <rdfs:domain rdf:resource="&media;MediaSubtype"/>
-        <rdfs:range rdf:resource="&media;MediaSubtype"/>
+        <rdfs:domain rdf:resource="&m;MediaSubtype"/>
+        <rdfs:range rdf:resource="&m;MediaSubtype"/>
     </owl:ObjectProperty>
     
 
@@ -118,9 +118,9 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#canonicalName -->
 
-    <owl:DatatypeProperty rdf:about="&media;canonicalName">
+    <owl:DatatypeProperty rdf:about="&m;canonicalName">
         <rdfs:label xml:lang="en">canonical name</rdfs:label>
-        <rdfs:domain rdf:resource="&media;NamedMediaProperty"/>
+        <rdfs:domain rdf:resource="&m;NamedMediaProperty"/>
         <rdfs:range rdf:resource="&xsd;token"/>
     </owl:DatatypeProperty>
     
@@ -128,10 +128,10 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#fileType -->
 
-    <owl:DatatypeProperty rdf:about="&media;fileType">
+    <owl:DatatypeProperty rdf:about="&m;fileType">
         <rdfs:label xml:lang="en">file type</rdfs:label>
         <rdfs:comment xml:lang="en">common file name extension without full-stop &quot;.&quot; prefix</rdfs:comment>
-        <rdfs:domain rdf:resource="&media;MediaSubtype"/>
+        <rdfs:domain rdf:resource="&m;MediaSubtype"/>
         <rdfs:range rdf:resource="&xsd;token"/>
     </owl:DatatypeProperty>
     
@@ -139,9 +139,9 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#name -->
 
-    <owl:DatatypeProperty rdf:about="&media;name">
+    <owl:DatatypeProperty rdf:about="&m;name">
         <rdfs:label xml:lang="en">name</rdfs:label>
-        <rdfs:domain rdf:resource="&media;NamedMediaProperty"/>
+        <rdfs:domain rdf:resource="&m;NamedMediaProperty"/>
         <rdfs:range rdf:resource="&xsd;token"/>
     </owl:DatatypeProperty>
     
@@ -160,15 +160,15 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#ArchiveFile -->
 
-    <owl:Class rdf:about="&media;ArchiveFile">
-        <rdfs:subClassOf rdf:resource="&media;File"/>
+    <owl:Class rdf:about="&m;ArchiveFile">
+        <rdfs:subClassOf rdf:resource="&m;File"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#DataEntity -->
 
-    <owl:Class rdf:about="&media;DataEntity">
+    <owl:Class rdf:about="&m;DataEntity">
         <rdfs:label xml:lang="en">Data Entity</rdfs:label>
     </owl:Class>
     
@@ -176,9 +176,9 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#ExperimentalMediaSubtype -->
 
-    <owl:Class rdf:about="&media;ExperimentalMediaSubtype">
+    <owl:Class rdf:about="&m;ExperimentalMediaSubtype">
         <rdfs:label xml:lang="en">Experimental Media Subtype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;MediaSubtype"/>
+        <rdfs:subClassOf rdf:resource="&m;MediaSubtype"/>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc4288.txt</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -186,34 +186,34 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#File -->
 
-    <owl:Class rdf:about="&media;File">
+    <owl:Class rdf:about="&m;File">
         <rdfs:label xml:lang="en">File</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;StreamEntity"/>
+        <rdfs:subClassOf rdf:resource="&m;StreamEntity"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#MediaSubtype -->
 
-    <owl:Class rdf:about="&media;MediaSubtype">
+    <owl:Class rdf:about="&m;MediaSubtype">
         <rdfs:label xml:lang="en">Media Subtype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;MediaType"/>
+        <rdfs:subClassOf rdf:resource="&m;MediaType"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#MediaType -->
 
-    <owl:Class rdf:about="&media;MediaType">
+    <owl:Class rdf:about="&m;MediaType">
         <rdfs:label xml:lang="en">Media Type</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;NamedMediaProperty"/>
+        <rdfs:subClassOf rdf:resource="&m;NamedMediaProperty"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#NamedMediaProperty -->
 
-    <owl:Class rdf:about="&media;NamedMediaProperty">
+    <owl:Class rdf:about="&m;NamedMediaProperty">
         <rdfs:label xml:lang="en">Named Media Property</rdfs:label>
     </owl:Class>
     
@@ -221,27 +221,27 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#Parameter -->
 
-    <owl:Class rdf:about="&media;Parameter">
+    <owl:Class rdf:about="&m;Parameter">
         <rdfs:label xml:lang="en">Parameter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;NamedMediaProperty"/>
+        <rdfs:subClassOf rdf:resource="&m;NamedMediaProperty"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#StreamEntity -->
 
-    <owl:Class rdf:about="&media;StreamEntity">
+    <owl:Class rdf:about="&m;StreamEntity">
         <rdfs:label xml:lang="en">Stream Entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;DataEntity"/>
+        <rdfs:subClassOf rdf:resource="&m;DataEntity"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#TopMediaType -->
 
-    <owl:Class rdf:about="&media;TopMediaType">
+    <owl:Class rdf:about="&m;TopMediaType">
         <rdfs:label xml:lang="en">Top Media Type</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media;MediaType"/>
+        <rdfs:subClassOf rdf:resource="&m;MediaType"/>
     </owl:Class>
     
 
@@ -259,8 +259,8 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application -->
 
-    <owl:NamedIndividual rdf:about="&media;application">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;application">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Application Data</rdfs:label>
         <name rdf:datatype="&xsd;Name">application</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
@@ -270,60 +270,60 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application-octet-stream -->
 
-    <owl:NamedIndividual rdf:about="&media;application-octet-stream">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;application-octet-stream">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Arbitrary Binary Data</rdfs:label>
         <canonicalName rdf:datatype="&xsd;token">application/octet-stream</canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">octet-stream</name>
-        <mediaTypeSupertype rdf:resource="&media;application"/>
+        <mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application-octet-stream-padding -->
 
-    <owl:NamedIndividual rdf:about="&media;application-octet-stream-padding">
-        <rdf:type rdf:resource="&media;Parameter"/>
+    <owl:NamedIndividual rdf:about="&m;application-octet-stream-padding">
+        <rdf:type rdf:resource="&m;Parameter"/>
         <rdfs:label xml:lang="en">Octet Stream Padding</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">padding</name>
         <rdfs:comment xml:lang="en">number of bits of padding appended to the initial input stream for producing a stream in eight-bit alignment</rdfs:comment>
-        <parameterMediaType rdf:resource="&media;application-octet-stream"/>
+        <parameterMediaType rdf:resource="&m;application-octet-stream"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application-octet-stream-type -->
 
-    <owl:NamedIndividual rdf:about="&media;application-octet-stream-type">
-        <rdf:type rdf:resource="&media;Parameter"/>
+    <owl:NamedIndividual rdf:about="&m;application-octet-stream-type">
+        <rdf:type rdf:resource="&m;Parameter"/>
         <rdfs:label xml:lang="en">Octet Stream Type</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">type</name>
         <rdfs:comment xml:lang="en">human-readable type or category of binary data</rdfs:comment>
-        <parameterMediaType rdf:resource="&media;application-octet-stream"/>
+        <parameterMediaType rdf:resource="&m;application-octet-stream"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application-postscript -->
 
-    <owl:NamedIndividual rdf:about="&media;application-postscript">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;application-postscript">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">PostScript Program</rdfs:label>
         <canonicalName rdf:datatype="&xsd;token">application/postscript</canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">postscript</name>
-        <mediaTypeSupertype rdf:resource="&media;application"/>
+        <mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#audio -->
 
-    <owl:NamedIndividual rdf:about="&media;audio">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;audio">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Audio Data</rdfs:label>
         <name rdf:datatype="&xsd;Name">audio</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
@@ -333,21 +333,21 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#audio-basic -->
 
-    <owl:NamedIndividual rdf:about="&media;audio-basic">
+    <owl:NamedIndividual rdf:about="&m;audio-basic">
         <rdfs:label xml:lang="en">Basic Audio</rdfs:label>
         <canonicalName rdf:datatype="&xsd;token">audio/basic</canonicalName>
         <name rdf:datatype="&xsd;Name">basic</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <rdfs:comment xml:lang="en">single channel audio encoded using 8bit ISDN mu-law at a sample rate of 8000 Hz</rdfs:comment>
-        <mediaTypeSupertype rdf:resource="&media;audio"/>
+        <mediaTypeSupertype rdf:resource="&m;audio"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#image -->
 
-    <owl:NamedIndividual rdf:about="&media;image">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;image">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Image Data</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">image</name>
@@ -357,22 +357,22 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#image-jpeg -->
 
-    <owl:NamedIndividual rdf:about="&media;image-jpeg">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;image-jpeg">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">JPEG Image</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">image/jpeg</canonicalName>
         <name rdf:datatype="&xsd;Name">jpeg</name>
         <rdfs:comment xml:lang="en">image in JPEG format using JFIF encoding</rdfs:comment>
-        <mediaTypeSupertype rdf:resource="&media;image"/>
+        <mediaTypeSupertype rdf:resource="&m;image"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#message -->
 
-    <owl:NamedIndividual rdf:about="&media;message">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;message">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Encapsulated Message</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">message</name>
@@ -383,34 +383,34 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#message-partial -->
 
-    <owl:NamedIndividual rdf:about="&media;message-partial">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;message-partial">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Message Fragment</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">message/partial</canonicalName>
         <name rdf:datatype="&xsd;Name">partial</name>
-        <mediaTypeSupertype rdf:resource="&media;message"/>
+        <mediaTypeSupertype rdf:resource="&m;message"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#message-rfc822 -->
 
-    <owl:NamedIndividual rdf:about="&media;message-rfc822">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;message-rfc822">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">RFC822 Encapsulated Message</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">message/rfc822</canonicalName>
         <name rdf:datatype="&xsd;Name">rfc822</name>
-        <mediaTypeSupertype rdf:resource="&media;message"/>
+        <mediaTypeSupertype rdf:resource="&m;message"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#multipart -->
 
-    <owl:NamedIndividual rdf:about="&media;multipart">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;multipart">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Multipart Data</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">multipart</name>
@@ -421,63 +421,63 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#multipart-alternative -->
 
-    <owl:NamedIndividual rdf:about="&media;multipart-alternative">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;multipart-alternative">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Alternative Multipart Item</rdfs:label>
         <name rdf:datatype="&xsd;Name">alternative</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">multipart/alternative</canonicalName>
-        <mediaTypeSupertype rdf:resource="&media;multipart"/>
-        <syntacticallyEquivalentType rdf:resource="&media;multipart-mixed"/>
+        <mediaTypeSupertype rdf:resource="&m;multipart"/>
+        <syntacticallyEquivalentType rdf:resource="&m;multipart-mixed"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#multipart-digest -->
 
-    <owl:NamedIndividual rdf:about="&media;multipart-digest">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;multipart-digest">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Multipart RFC822 Message Digest</rdfs:label>
         <name rdf:datatype="&xsd;Name">digest</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">multipart/digest</canonicalName>
-        <mediaTypeSupertype rdf:resource="&media;multipart"/>
-        <syntacticallyEquivalentType rdf:resource="&media;multipart-mixed"/>
+        <mediaTypeSupertype rdf:resource="&m;multipart"/>
+        <syntacticallyEquivalentType rdf:resource="&m;multipart-mixed"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#multipart-mixed -->
 
-    <owl:NamedIndividual rdf:about="&media;multipart-mixed">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;multipart-mixed">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Mixed Multipart Data</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">mixed</name>
         <canonicalName rdf:datatype="&xsd;token">multipart/mixed</canonicalName>
-        <mediaTypeSupertype rdf:resource="&media;multipart"/>
+        <mediaTypeSupertype rdf:resource="&m;multipart"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#multipart-parallel -->
 
-    <owl:NamedIndividual rdf:about="&media;multipart-parallel">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;multipart-parallel">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Parallel Multipart Data</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <canonicalName rdf:datatype="&xsd;token">multipart/parallel</canonicalName>
         <name rdf:datatype="&xsd;Name">parallel</name>
-        <mediaTypeSupertype rdf:resource="&media;multipart"/>
-        <syntacticallyEquivalentType rdf:resource="&media;multipart-mixed"/>
+        <mediaTypeSupertype rdf:resource="&m;multipart"/>
+        <syntacticallyEquivalentType rdf:resource="&m;multipart-mixed"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#text -->
 
-    <owl:NamedIndividual rdf:about="&media;text">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;text">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Textual Information</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">text</name>
@@ -487,46 +487,46 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#text-charset -->
 
-    <owl:NamedIndividual rdf:about="&media;text-charset">
-        <rdf:type rdf:resource="&media;Parameter"/>
+    <owl:NamedIndividual rdf:about="&m;text-charset">
+        <rdf:type rdf:resource="&m;Parameter"/>
         <rdfs:label xml:lang="en">Character Set</rdfs:label>
         <name rdf:datatype="&xsd;Name">charset</name>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
-        <parameterMediaType rdf:resource="&media;application"/>
-        <parameterMediaType rdf:resource="&media;text"/>
+        <parameterMediaType rdf:resource="&m;application"/>
+        <parameterMediaType rdf:resource="&m;text"/>
     </owl:NamedIndividual>
     <owl:Axiom>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <owl:annotatedTarget rdf:resource="&media;application"/>
-        <owl:annotatedProperty rdf:resource="&media;parameterMediaType"/>
-        <owl:annotatedSource rdf:resource="&media;text-charset"/>
+        <owl:annotatedTarget rdf:resource="&m;application"/>
+        <owl:annotatedProperty rdf:resource="&m;parameterMediaType"/>
+        <owl:annotatedSource rdf:resource="&m;text-charset"/>
     </owl:Axiom>
     <owl:Axiom>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
-        <owl:annotatedProperty rdf:resource="&media;parameterMediaType"/>
-        <owl:annotatedTarget rdf:resource="&media;text"/>
-        <owl:annotatedSource rdf:resource="&media;text-charset"/>
+        <owl:annotatedProperty rdf:resource="&m;parameterMediaType"/>
+        <owl:annotatedTarget rdf:resource="&m;text"/>
+        <owl:annotatedSource rdf:resource="&m;text-charset"/>
     </owl:Axiom>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#text-plain -->
 
-    <owl:NamedIndividual rdf:about="&media;text-plain">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;text-plain">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">Plain Text</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">plain</name>
         <canonicalName rdf:datatype="&xsd;token">text/plain</canonicalName>
-        <mediaTypeSupertype rdf:resource="&media;text"/>
+        <mediaTypeSupertype rdf:resource="&m;text"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#video -->
 
-    <owl:NamedIndividual rdf:about="&media;video">
-        <rdf:type rdf:resource="&media;TopMediaType"/>
+    <owl:NamedIndividual rdf:about="&m;video">
+        <rdf:type rdf:resource="&m;TopMediaType"/>
         <rdfs:label xml:lang="en">Video Data</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">video</name>
@@ -536,13 +536,13 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#video-mpeg -->
 
-    <owl:NamedIndividual rdf:about="&media;video-mpeg">
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m;video-mpeg">
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">MPEG Video</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc2046.txt</rdfs:isDefinedBy>
         <name rdf:datatype="&xsd;Name">mpeg</name>
         <canonicalName rdf:datatype="&xsd;token">video/mpeg</canonicalName>
-        <mediaTypeSupertype rdf:resource="&media;video"/>
+        <mediaTypeSupertype rdf:resource="&m;video"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

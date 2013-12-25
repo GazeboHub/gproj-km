@@ -4,9 +4,9 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY media "http://code.gazebo.ws/ont/media.rdf#" >
+    <!ENTITY m "http://code.gazebo.ws/ont/media.rdf#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY media-xml "http://code.gazebo.ws/ont/media-xml.rdf#" >
+    <!ENTITY m-x "http://code.gazebo.ws/ont/media-xml.rdf#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
@@ -15,10 +15,10 @@
      xml:base="http://code.gazebo.ws/ont/media-xml.rdf"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:media-xml="http://code.gazebo.ws/ont/media-xml.rdf#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:media="http://code.gazebo.ws/ont/media.rdf#">
+     xmlns:m="http://code.gazebo.ws/ont/media.rdf#"
+     xmlns:m-x="http://code.gazebo.ws/ont/media-xml.rdf#">
     <owl:Ontology rdf:about="http://code.gazebo.ws/ont/media-xml.rdf">
         <rdfs:label xml:lang="en">Core XML Media Types Ontology</rdfs:label>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/info/rfc3023</rdfs:seeAlso>
@@ -40,7 +40,7 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#XHTMLLiteral -->
 
-    <rdfs:Datatype rdf:about="&media;XHTMLLiteral">
+    <rdfs:Datatype rdf:about="&m;XHTMLLiteral">
         <owl:equivalentClass rdf:resource="&rdf;XMLLiteral"/>
         <rdfs:comment xml:lang="en">XML literal conformig to XHTML</rdfs:comment>
     </rdfs:Datatype>
@@ -49,8 +49,8 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#XHTMLLiteral-1.0 -->
 
-    <rdfs:Datatype rdf:about="&media;XHTMLLiteral-1.0">
-        <owl:equivalentClass rdf:resource="&media;XHTMLLiteral"/>
+    <rdfs:Datatype rdf:about="&m;XHTMLLiteral-1.0">
+        <owl:equivalentClass rdf:resource="&m;XHTMLLiteral"/>
         <rdfs:comment xml:lang="en">XHTMLLiteral conforming to XHTML 1.0</rdfs:comment>
     </rdfs:Datatype>
     
@@ -58,8 +58,8 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#XHTMLLiteral-1.1 -->
 
-    <rdfs:Datatype rdf:about="&media;XHTMLLiteral-1.1">
-        <owl:equivalentClass rdf:resource="&media;XHTMLLiteral"/>
+    <rdfs:Datatype rdf:about="&m;XHTMLLiteral-1.1">
+        <owl:equivalentClass rdf:resource="&m;XHTMLLiteral"/>
         <rdfs:comment xml:lang="en">XHTMLLiteral conforming to XHTML 1.1</rdfs:comment>
     </rdfs:Datatype>
     
@@ -78,13 +78,13 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#mediaTypeSupertype -->
 
-    <owl:ObjectProperty rdf:about="&media;mediaTypeSupertype"/>
+    <owl:ObjectProperty rdf:about="&m;mediaTypeSupertype"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#syntacticallyEquivalentType -->
 
-    <owl:ObjectProperty rdf:about="&media;syntacticallyEquivalentType"/>
+    <owl:ObjectProperty rdf:about="&m;syntacticallyEquivalentType"/>
     
 
 
@@ -101,10 +101,10 @@
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#nameAbbreviated -->
 
-    <owl:DatatypeProperty rdf:about="&media-xml;nameAbbreviated">
+    <owl:DatatypeProperty rdf:about="&m-x;nameAbbreviated">
         <rdfs:label xml:lang="en">name (abbreviated)</rdfs:label>
         <rdfs:comment xml:lang="en">media type name part without &quot;+xml&quot; suffix</rdfs:comment>
-        <rdfs:domain rdf:resource="&media-xml;XMLMediaType"/>
+        <rdfs:domain rdf:resource="&m-x;XMLMediaType"/>
         <rdfs:range rdf:resource="&xsd;Name"/>
     </owl:DatatypeProperty>
     
@@ -112,19 +112,19 @@
 
     <!-- http://code.gazebo.ws/ont/media.rdf#canonicalName -->
 
-    <owl:DatatypeProperty rdf:about="&media;canonicalName"/>
+    <owl:DatatypeProperty rdf:about="&m;canonicalName"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#fileType -->
 
-    <owl:DatatypeProperty rdf:about="&media;fileType"/>
+    <owl:DatatypeProperty rdf:about="&m;fileType"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#name -->
 
-    <owl:DatatypeProperty rdf:about="&media;name"/>
+    <owl:DatatypeProperty rdf:about="&m;name"/>
     
 
 
@@ -141,37 +141,37 @@
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#MathMLMediaType -->
 
-    <owl:Class rdf:about="&media-xml;MathMLMediaType">
+    <owl:Class rdf:about="&m-x;MathMLMediaType">
         <rdfs:label xml:lang="en">MathML Media Type</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&media-xml;XMLMediaType"/>
+        <rdfs:subClassOf rdf:resource="&m-x;XMLMediaType"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#XMLMediaType -->
 
-    <owl:Class rdf:about="&media-xml;XMLMediaType">
+    <owl:Class rdf:about="&m-x;XMLMediaType">
         <rdfs:label xml:lang="en">XML Media Type</rdfs:label>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&media;syntacticallyEquivalentType"/>
-                <owl:someValuesFrom rdf:resource="&media-xml;XMLMediaType"/>
+                <owl:onProperty rdf:resource="&m;syntacticallyEquivalentType"/>
+                <owl:someValuesFrom rdf:resource="&m-x;XMLMediaType"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&media;MediaType"/>
+        <rdfs:subClassOf rdf:resource="&m;MediaType"/>
     </owl:Class>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#MediaSubtype -->
 
-    <owl:Class rdf:about="&media;MediaSubtype"/>
+    <owl:Class rdf:about="&m;MediaSubtype"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#MediaType -->
 
-    <owl:Class rdf:about="&media;MediaType"/>
+    <owl:Class rdf:about="&m;MediaType"/>
     
 
 
@@ -188,192 +188,192 @@
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-mathml-content+xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-mathml-content+xml">
-        <rdf:type rdf:resource="&media-xml;MathMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-mathml-content+xml">
+        <rdf:type rdf:resource="&m-x;MathMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">MathML Content Instance</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2010/REC-MathML3-20101021/</rdfs:isDefinedBy>
         <nameAbbreviated rdf:datatype="&xsd;Name">mathml-content</nameAbbreviated>
-        <media:name rdf:datatype="&xsd;token">mathml-content+xml</media:name>
-        <media:canonicalName rdf:datatype="&xsd;token">pplication/mathml-content+xml</media:canonicalName>
-        <media:syntacticallyEquivalentType rdf:resource="&media-xml;application-mathml-xml"/>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;token">mathml-content+xml</m:name>
+        <m:canonicalName rdf:datatype="&xsd;token">pplication/mathml-content+xml</m:canonicalName>
+        <m:syntacticallyEquivalentType rdf:resource="&m-x;application-mathml-xml"/>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-mathml-presentation+xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-mathml-presentation+xml">
-        <rdf:type rdf:resource="&media-xml;MathMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-mathml-presentation+xml">
+        <rdf:type rdf:resource="&m-x;MathMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">MathML Presentational Instance</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/mathml-presentation+xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/mathml-presentation+xml</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2010/REC-MathML3-20101021/</rdfs:isDefinedBy>
         <nameAbbreviated rdf:datatype="&xsd;Name">mathml-presentation</nameAbbreviated>
-        <media:name rdf:datatype="&xsd;token">mathml-presentation+xml</media:name>
-        <media:syntacticallyEquivalentType rdf:resource="&media-xml;application-mathml-xml"/>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;token">mathml-presentation+xml</m:name>
+        <m:syntacticallyEquivalentType rdf:resource="&m-x;application-mathml-xml"/>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-mathml-xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-mathml-xml">
-        <rdf:type rdf:resource="&media-xml;MathMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-mathml-xml">
+        <rdf:type rdf:resource="&m-x;MathMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">MathML Instance</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/mathml+xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/mathml+xml</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2010/REC-MathML3-20101021/</rdfs:isDefinedBy>
         <nameAbbreviated rdf:datatype="&xsd;Name">mathml</nameAbbreviated>
-        <media:name rdf:datatype="&xsd;token">mathml+xml</media:name>
-        <media:fileType rdf:datatype="&xsd;token">mml</media:fileType>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;token">mathml+xml</m:name>
+        <m:fileType rdf:datatype="&xsd;token">mml</m:fileType>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-rdf+xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-rdf+xml">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-rdf+xml">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">RDF Document</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/rdf+xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/rdf+xml</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3870.txt</rdfs:isDefinedBy>
         <nameAbbreviated rdf:datatype="&xsd;Name">rdf</nameAbbreviated>
-        <media:fileType rdf:datatype="&xsd;token">rdf</media:fileType>
-        <media:name rdf:datatype="&xsd;token">rdf+xml</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:fileType rdf:datatype="&xsd;token">rdf</m:fileType>
+        <m:name rdf:datatype="&xsd;token">rdf+xml</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-xml">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-xml">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XML Doument Entity (Application Data)</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/xml</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <media:name rdf:datatype="&xsd;Name">xml</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;Name">xml</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-xml-dtd -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-xml-dtd">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-xml-dtd">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XML External DTD Subset</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/xml-dtd</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/xml-dtd</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <media:name rdf:datatype="&xsd;Name">xml-dtd</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;Name">xml-dtd</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-xml-external-parsed-entity -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-xml-external-parsed-entity">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-xml-external-parsed-entity">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XML External Parsed Entity (Application Data)</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/xml-external-parsed-entity</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/xml-external-parsed-entity</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <media:name rdf:datatype="&xsd;Name">xml-external-parsed-entity</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:name rdf:datatype="&xsd;Name">xml-external-parsed-entity</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#application-xslt+xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;application-xslt+xml">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;application-xslt+xml">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XSL Stylesheet</rdfs:label>
-        <media:canonicalName rdf:datatype="&xsd;token">application/xslt+xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">application/xslt+xml</m:canonicalName>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2007/REC-xslt20-20070123/</rdfs:isDefinedBy>
-        <media:fileType rdf:datatype="&xsd;token">xsl</media:fileType>
+        <m:fileType rdf:datatype="&xsd;token">xsl</m:fileType>
         <nameAbbreviated rdf:datatype="&xsd;Name">xslt</nameAbbreviated>
-        <media:fileType rdf:datatype="&xsd;token">xslt</media:fileType>
-        <media:name rdf:datatype="&xsd;token">xslt+xml</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;application"/>
+        <m:fileType rdf:datatype="&xsd;token">xslt</m:fileType>
+        <m:name rdf:datatype="&xsd;token">xslt+xml</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;application"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#image-svg-xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;image-svg-xml">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;image-svg-xml">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">SVG Image</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.w3.org/TR/2011/REC-SVG11-20110816/</rdfs:isDefinedBy>
-        <media:canonicalName rdf:datatype="&xsd;token">image/svg+xml</media:canonicalName>
+        <m:canonicalName rdf:datatype="&xsd;token">image/svg+xml</m:canonicalName>
         <nameAbbreviated rdf:datatype="&xsd;Name">svg</nameAbbreviated>
-        <media:fileType rdf:datatype="&xsd;token">svg</media:fileType>
-        <media:name rdf:datatype="&xsd;token">svg+xml</media:name>
-        <media:mediaTypeSupertype rdf:resource="&media;image"/>
+        <m:fileType rdf:datatype="&xsd;token">svg</m:fileType>
+        <m:name rdf:datatype="&xsd;token">svg+xml</m:name>
+        <m:mediaTypeSupertype rdf:resource="&m;image"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#text-xml -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;text-xml">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;text-xml">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XML Doument Entity (Textual Information)</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <media:canonicalName rdf:datatype="&xsd;token">text/xml</media:canonicalName>
-        <media:name rdf:datatype="&xsd;Name">xml</media:name>
-        <media:syntacticallyEquivalentType rdf:resource="&media-xml;application-xml"/>
-        <media:mediaTypeSupertype rdf:resource="&media;text"/>
+        <m:canonicalName rdf:datatype="&xsd;token">text/xml</m:canonicalName>
+        <m:name rdf:datatype="&xsd;Name">xml</m:name>
+        <m:syntacticallyEquivalentType rdf:resource="&m-x;application-xml"/>
+        <m:mediaTypeSupertype rdf:resource="&m;text"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media-xml.rdf#text-xml-external-parsed-entity -->
 
-    <owl:NamedIndividual rdf:about="&media-xml;text-xml-external-parsed-entity">
-        <rdf:type rdf:resource="&media-xml;XMLMediaType"/>
-        <rdf:type rdf:resource="&media;MediaSubtype"/>
+    <owl:NamedIndividual rdf:about="&m-x;text-xml-external-parsed-entity">
+        <rdf:type rdf:resource="&m-x;XMLMediaType"/>
+        <rdf:type rdf:resource="&m;MediaSubtype"/>
         <rdfs:label xml:lang="en">XML External Parsed Entity (Textual Information)</rdfs:label>
         <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/rfc/rfc3023.txt</rdfs:isDefinedBy>
-        <media:canonicalName rdf:datatype="&xsd;token">text/xml-external-parsed-entity</media:canonicalName>
-        <media:name rdf:datatype="&xsd;Name">xml-external-parsed-entity</media:name>
-        <media:syntacticallyEquivalentType rdf:resource="&media-xml;application-xml-external-parsed-entity"/>
-        <media:mediaTypeSupertype rdf:resource="&media;text"/>
+        <m:canonicalName rdf:datatype="&xsd;token">text/xml-external-parsed-entity</m:canonicalName>
+        <m:name rdf:datatype="&xsd;Name">xml-external-parsed-entity</m:name>
+        <m:syntacticallyEquivalentType rdf:resource="&m-x;application-xml-external-parsed-entity"/>
+        <m:mediaTypeSupertype rdf:resource="&m;text"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#application -->
 
-    <owl:NamedIndividual rdf:about="&media;application"/>
+    <owl:NamedIndividual rdf:about="&m;application"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#image -->
 
-    <owl:NamedIndividual rdf:about="&media;image"/>
+    <owl:NamedIndividual rdf:about="&m;image"/>
     
 
 
     <!-- http://code.gazebo.ws/ont/media.rdf#text -->
 
-    <owl:NamedIndividual rdf:about="&media;text"/>
+    <owl:NamedIndividual rdf:about="&m;text"/>
 </rdf:RDF>
 
 
