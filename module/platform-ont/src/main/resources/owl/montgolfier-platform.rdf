@@ -133,7 +133,6 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaDeskPlatform -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaDeskPlatform">
-        <rdf:type rdf:resource="&app;DesktopComponent"/>
         <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Desktop Platform</rdfs:label>
         <rdfs:comment xml:lang="en">component model, informal - not component (TO DO: Fix that type assignment)</rdfs:comment>
@@ -146,8 +145,9 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaEnterprisePlatform -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaEnterprisePlatform">
-        <rdf:type rdf:resource="&app;ServerComponent"/>
+        <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Platform, Enterprise Edition</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://www.oracle.com/technetwork/java/javaee/javaee7-whitepaper-1956203.pdf</rdfs:isDefinedBy>
         <rdfs:comment xml:lang="en">component model, not component (TO DO: Fix that type assignment)</rdfs:comment>
         <platform:extendsPlatform rdf:resource="&mg;JavaPlatform"/>
     </owl:NamedIndividual>
@@ -157,7 +157,7 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaEnterpriseServer -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaEnterpriseServer">
-        <rdf:type rdf:resource="&app;ServerApp"/>
+        <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Enterprise Application Server</rdfs:label>
         <rdfs:comment xml:lang="en">informal comopnent model - not really a component per se</rdfs:comment>
         <app:availablePlatform rdf:resource="&mg;JavaEnterprisePlatform"/>
@@ -168,7 +168,7 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaPlatform -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaPlatform">
-        <rdf:type rdf:resource="&app;Library"/>
+        <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Platform</rdfs:label>
         <rdfs:comment xml:lang="en">Generic Java Platform model (TO DO: Model this more effectively)</rdfs:comment>
     </owl:NamedIndividual>
@@ -178,7 +178,7 @@
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#JavaServletContainer -->
 
     <owl:NamedIndividual rdf:about="&mg;JavaServletContainer">
-        <rdf:type rdf:resource="&app;ServerApp"/>
+        <rdf:type rdf:resource="&platform;SoftwarePlatform"/>
         <rdfs:label xml:lang="en">Java Servlet Container</rdfs:label>
         <rdfs:comment xml:lang="en">component model, not component (TO DO: Fix that type assignment)</rdfs:comment>
         <app:availablePlatform rdf:resource="&mg;JavaEnterprisePlatform"/>
