@@ -6,29 +6,17 @@
          xmlns:ns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>gproj-km</artifactId>
+  <artifactId>platform-tools</artifactId>
 
-  <name>Knowledge Management Work Area, Gazebo Project</name>
+  <name>GKM Platform Tools</name>
 
   <parent>
     <groupId>ws.gazebo.openshift.gproj</groupId>
 
-    <artifactId>gproj-projects</artifactId>
+    <artifactId>gproj-km</artifactId>
 
     <version>1.0</version>
+
+    <relativePath>../..</relativePath>
   </parent>
-
-  <packaging>pom</packaging>
-
-  <modules>
-    <module>module/tmxskos</module>
-
-    <module>module/skosmm</module>
-
-    <module>module/skoswiki</module>
-
-    <module>module/platform-ont</module>
-    
-    <module>module/platform-tools</module>
-  </modules>
 </project>
