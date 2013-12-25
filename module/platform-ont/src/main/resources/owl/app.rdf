@@ -21,6 +21,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://code.gazebo.ws/ont/app.rdf">
         <rdfs:label xml:lang="en">Platform Applications Ontology</rdfs:label>
+        <owl:imports rdf:resource="http://code.gazebo.ws/ont/media-xml.rdf"/>
+        <owl:imports rdf:resource="http://code.gazebo.ws/ont/media.rdf"/>
         <owl:imports rdf:resource="http://code.gazebo.ws/ont/platform.rdf"/>
     </owl:Ontology>
     
@@ -43,6 +45,27 @@
         <rdfs:label xml:lang="en">available on platform</rdfs:label>
         <rdfs:domain rdf:resource="&a;SoftwareApplication"/>
         <rdfs:range rdf:resource="&p;Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#inputMediaType -->
+
+    <owl:ObjectProperty rdf:about="&a;inputMediaType">
+        <rdfs:label xml:lang="en">input media type</rdfs:label>
+        <owl:propertyDisjointWith rdf:resource="&a;outputMediaType"/>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/media.rdf#MediaType"/>
+        <rdfs:domain rdf:resource="&p;Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#outputMediaType -->
+
+    <owl:ObjectProperty rdf:about="&a;outputMediaType">
+        <rdfs:label xml:lang="en">output media type</rdfs:label>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/media.rdf#MediaType"/>
+        <rdfs:domain rdf:resource="&p;Component"/>
     </owl:ObjectProperty>
     
 

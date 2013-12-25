@@ -23,7 +23,6 @@
         <rdfs:label xml:lang="en">Core XML Media Types Ontology</rdfs:label>
         <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.rfc-editor.org/info/rfc3023</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">To Do: Add media types for XSD</rdfs:comment>
-        <owl:imports rdf:resource="http://code.gazebo.ws/ont/media.rdf"/>
     </owl:Ontology>
     
 
@@ -69,6 +68,29 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#mediaTypeSupertype -->
+
+    <owl:ObjectProperty rdf:about="&media;mediaTypeSupertype"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#syntacticallyEquivalentType -->
+
+    <owl:ObjectProperty rdf:about="&media;syntacticallyEquivalentType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Data properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -85,6 +107,24 @@
         <rdfs:domain rdf:resource="&media-xml;XMLMediaType"/>
         <rdfs:range rdf:resource="&xsd;Name"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#canonicalName -->
+
+    <owl:DatatypeProperty rdf:about="&media;canonicalName"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#fileType -->
+
+    <owl:DatatypeProperty rdf:about="&media;fileType"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#name -->
+
+    <owl:DatatypeProperty rdf:about="&media;name"/>
     
 
 
@@ -120,6 +160,18 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&media;MediaType"/>
     </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#MediaSubtype -->
+
+    <owl:Class rdf:about="&media;MediaSubtype"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#MediaType -->
+
+    <owl:Class rdf:about="&media;MediaType"/>
     
 
 
@@ -304,6 +356,24 @@
         <media:syntacticallyEquivalentType rdf:resource="&media-xml;application-xml-external-parsed-entity"/>
         <media:mediaTypeSupertype rdf:resource="&media;text"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#application -->
+
+    <owl:NamedIndividual rdf:about="&media;application"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#image -->
+
+    <owl:NamedIndividual rdf:about="&media;image"/>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/media.rdf#text -->
+
+    <owl:NamedIndividual rdf:about="&media;text"/>
 </rdf:RDF>
 
 
