@@ -147,8 +147,9 @@
 
     <owl:NamedIndividual rdf:about="&mg;JavaEnterprisePlatform">
         <rdf:type rdf:resource="&app;ServerComponent"/>
-        <rdfs:label xml:lang="en">Java Enterprise Platform</rdfs:label>
+        <rdfs:label xml:lang="en">Java Platform, Enterprise Edition</rdfs:label>
         <rdfs:comment xml:lang="en">component model, not component (TO DO: Fix that type assignment)</rdfs:comment>
+        <platform:extendsPlatform rdf:resource="&mg;JavaPlatform"/>
     </owl:NamedIndividual>
     
 

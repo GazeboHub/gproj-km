@@ -65,12 +65,33 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/platform.rdf#extendsPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#extendsPlatform">
+        <rdfs:label xml:lang="en">extends platform</rdfs:label>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://code.gazebo.ws/ont/platform.rdf#platformComponent -->
 
     <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#platformComponent">
         <rdfs:label xml:lang="en">platform component</rdfs:label>
         <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
         <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#platformExtendedBy -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#platformExtendedBy">
+        <rdfs:label xml:lang="en">platform extended by</rdfs:label>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Platform"/>
+        <owl:inverseOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#extendsPlatform"/>
     </owl:ObjectProperty>
     
 
