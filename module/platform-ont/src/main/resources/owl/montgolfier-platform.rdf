@@ -283,8 +283,8 @@
 
     <owl:NamedIndividual rdf:about="&mg;Vaadin">
         <rdf:type rdf:resource="&app;Library"/>
-        <rdfs:label xml:lang="en">Provides a GUI framework oriented to web applications and compatible with Liferay</rdfs:label>
         <rdfs:label xml:lang="en">Vaadin</rdfs:label>
+        <rdfs:comment xml:lang="en">Provides a GUI framework oriented to web applications and compatible with Liferay</rdfs:comment>
         <app:availablePlatform rdf:resource="&mg;JavaPlatform"/>
     </owl:NamedIndividual>
     
