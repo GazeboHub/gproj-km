@@ -33,6 +33,27 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/app.rdf#accessesService -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/app.rdf#accessesService">
+        <rdfs:label xml:lang="en">accesses service</rdfs:label>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#serviceAccessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/app.rdf#serviceAccessedBy">
+        <rdfs:label xml:lang="en">service accessed by</rdfs:label>
+        <owl:inverseOf rdf:resource="http://code.gazebo.ws/ont/app.rdf#accessesService"/>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://code.gazebo.ws/ont/platform.rdf#componentPlatform -->
 
     <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#componentPlatform">
@@ -158,6 +179,14 @@
 
     <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#Platform">
         <rdfs:label xml:lang="en">Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#Service -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#Service">
+        <rdfs:label xml:lang="en">Service</rdfs:label>
     </owl:Class>
     
 
