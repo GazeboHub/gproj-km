@@ -213,6 +213,36 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/platform.rdf#ServiceConsumer -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#ServiceConsumer">
+        <rdfs:label xml:lang="en">Service Consumer</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/app.rdf#accessesService"/>
+                <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#ServiceProvider -->
+
+    <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#ServiceProvider">
+        <rdfs:label xml:lang="en">Service Provider</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://code.gazebo.ws/ont/platform.rdf#providesService"/>
+                <owl:someValuesFrom rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+    </owl:Class>
+    
+
+
     <!-- http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent -->
 
     <owl:Class rdf:about="http://code.gazebo.ws/ont/platform.rdf#SoftwareComponent">
