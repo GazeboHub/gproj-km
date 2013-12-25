@@ -24,6 +24,7 @@
         <owl:imports rdf:resource="http://code.gazebo.ws/ont/media-xml.rdf"/>
         <owl:imports rdf:resource="http://code.gazebo.ws/ont/media.rdf"/>
         <owl:imports rdf:resource="http://code.gazebo.ws/ont/platform.rdf"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Ontology>
     
 
@@ -56,6 +57,29 @@
         <owl:propertyDisjointWith rdf:resource="&a;outputMediaType"/>
         <rdfs:range rdf:resource="http://code.gazebo.ws/ont/media.rdf#MediaType"/>
         <rdfs:domain rdf:resource="&p;Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#licensedBy -->
+
+    <owl:ObjectProperty rdf:about="&a;licensedBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">licensed by</rdfs:label>
+        <owl:inverseOf rdf:resource="&a;licensorOf"/>
+        <rdfs:domain rdf:resource="&p;Component"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/app.rdf#licensorOf -->
+
+    <owl:ObjectProperty rdf:about="&a;licensorOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">licensor of</rdfs:label>
+        <rdfs:range rdf:resource="&p;Component"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </owl:ObjectProperty>
     
 
