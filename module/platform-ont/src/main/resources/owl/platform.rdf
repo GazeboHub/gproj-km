@@ -75,6 +75,28 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/platform.rdf#providesService -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#providesService">
+        <rdfs:label xml:lang="en">provides service</rdfs:label>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://code.gazebo.ws/ont/platform.rdf#serviceProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://code.gazebo.ws/ont/platform.rdf#serviceProvidedBy">
+        <rdfs:label xml:lang="en">service provided by</rdfs:label>
+        <rdfs:range rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Component"/>
+        <rdfs:domain rdf:resource="http://code.gazebo.ws/ont/platform.rdf#Service"/>
+        <owl:inverseOf rdf:resource="http://code.gazebo.ws/ont/platform.rdf#providesService"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
