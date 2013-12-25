@@ -228,6 +228,15 @@
     
 
 
+    <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#OntologyEditorService -->
+
+    <owl:NamedIndividual rdf:about="&mg;OntologyEditorService">
+        <rdf:type rdf:resource="&platform;Service"/>
+        <rdfs:label xml:lang="en">Ontology Editor Service</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://code.gazebo.ws/ont/montgolfier-platform.rdf#OpenShiftOnline -->
 
     <owl:NamedIndividual rdf:about="&mg;OpenShiftOnline">
@@ -243,6 +252,7 @@
         <rdf:type rdf:resource="&app;DeskApp"/>
         <rdfs:label xml:lang="en">Protege</rdfs:label>
         <app:availablePlatform rdf:resource="&mg;JavaDeskPlatform"/>
+        <platform:providesService rdf:resource="&mg;OntologyEditorService"/>
     </owl:NamedIndividual>
     
 
