@@ -54,7 +54,6 @@
 
     <owl:ObjectProperty rdf:about="&a;inputMediaType">
         <rdfs:label xml:lang="en">input media type</rdfs:label>
-        <owl:propertyDisjointWith rdf:resource="&a;outputMediaType"/>
         <rdfs:range rdf:resource="http://code.gazebo.ws/ont/media.rdf#MediaType"/>
         <rdfs:domain rdf:resource="&p;Component"/>
     </owl:ObjectProperty>
