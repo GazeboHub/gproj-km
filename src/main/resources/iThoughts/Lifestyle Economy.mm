@@ -17,6 +17,9 @@
 <node TEXT="Music" ID="Freemind_Link_20"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Decorative items" ID="Freemind_Link_21"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 </node>
+<node TEXT="Sports" ID="Freemind_Link_123"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><node TEXT="Sports Venues" ID="Freemind_Link_122"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
+<node TEXT="Individual Sports and Fitness" ID="Freemind_Link_124"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
+</node>
 <node TEXT="Local Government Events" ID="Freemind_Link_22"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><node TEXT="Civic &quot;Town Hall&quot; events, etc" ID="Freemind_Link_23"   COLOR="#000000" BACKGROUND_COLOR="#FFD9B2" STYLE="bubble" ><edge COLOR="#FFD9B2" /><attribute NAME="Callout" VALUE="{269, -2}"/></node>
 </node>
 <node TEXT="Local Chambers of Commerce" ID="Freemind_Link_24"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
@@ -30,7 +33,7 @@
 <node TEXT="Personal care items" ID="Freemind_Link_32"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Home Furnishings" ID="Freemind_Link_33"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Home maintenance items" ID="Freemind_Link_34"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
-<node TEXT="&quot;Ye olde general store&quot; items" ID="Freemind_Link_37"   COLOR="#000000" BACKGROUND_COLOR="#FFD9B2" STYLE="bubble" ><edge COLOR="#FFD9B2" /><attribute NAME="Callout" VALUE="{-184, 69}"/></node>
+<node TEXT="Recreational Equipment" ID="Freemind_Link_125"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Landscaping items" ID="Freemind_Link_35"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Gardening items" ID="Freemind_Link_36"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 </node>
@@ -47,7 +50,7 @@
 <node TEXT="Spotify" ID="Freemind_Link_61"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Last.fm" ID="Freemind_Link_62"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 </node>
-<node TEXT="&quot;Something else&quot; would be: Commercial music licensing, distribution and rights management services&#10;&#10;&quot;IANAL&quot;, and I am not a DJ or a music producer&#10; - Sean Champ" ID="Freemind_Link_66"   COLOR="#000000" BACKGROUND_COLOR="#FFD9B2" STYLE="bubble" ><edge COLOR="#FFD9B2" /><attribute NAME="Callout" VALUE="{-401, 55}"/></node>
+<node TEXT="NB: Commercial music licensing, distribution and rights management services" ID="Freemind_Link_66"   COLOR="#000000" BACKGROUND_COLOR="#FFD9B2" STYLE="bubble" ><edge COLOR="#FFD9B2" /><attribute NAME="Callout" VALUE="{-396, 55}"/></node>
 <node TEXT="Serialized Video Services" ID="Freemind_Link_63"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><node TEXT="YouTube" ID="Freemind_Link_64"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Vimeo" ID="Freemind_Link_65"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 </node>
@@ -56,7 +59,7 @@
 </node>
 <node TEXT="Online Messaging Services" ID="Freemind_Link_69"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><node TEXT="Facebook messaging" ID="Freemind_Link_70"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="YIM" ID="Freemind_Link_71"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
-<node TEXT="Google Chat" ID="Freemind_Link_72"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><arrowlink COLOR="#477DB2" DESTINATION="Freemind_Link_73" ENDARROW="Default" ENDINCLINATION="22;0;" ID="Arrow_ID_117" STARTARROW="None" STARTINCLINATION="22;0;" SOURCE_LABEL="" MIDDLE_LABEL="is a" TARGET_LABEL="" /></node>
+<node TEXT="Google Chat" ID="Freemind_Link_72"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><arrowlink COLOR="#477DB2" DESTINATION="Freemind_Link_73" ENDARROW="Default" ENDINCLINATION="22;0;" ID="Arrow_ID_128" STARTARROW="None" STARTINCLINATION="22;0;" SOURCE_LABEL="" MIDDLE_LABEL="is a" TARGET_LABEL="" /></node>
 <node TEXT="Public XMPP Services" ID="Freemind_Link_73"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Email services" ID="Freemind_Link_74"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 </node>
@@ -82,7 +85,7 @@
 </node>
 <node TEXT="Conventional library services" ID="Freemind_Link_96"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><node TEXT="Online card catalog search" ID="Freemind_Link_97"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
 <node TEXT="Inter-library loan services" ID="Freemind_Link_98"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /></node>
-<node TEXT="Library events" ID="Freemind_Link_99"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><arrowlink COLOR="#477DB2" DESTINATION="Freemind_Link_79" ENDARROW="Default" ENDINCLINATION="22;0;" ID="Arrow_ID_118" STARTARROW="None" STARTINCLINATION="22;0;" SOURCE_LABEL="" MIDDLE_LABEL="ct." TARGET_LABEL="" /></node>
+<node TEXT="Library events" ID="Freemind_Link_99"   COLOR="#000000" BACKGROUND_COLOR="#B2B2FE" STYLE="bubble" ><edge COLOR="#B2B2FE" /><arrowlink COLOR="#477DB2" DESTINATION="Freemind_Link_79" ENDARROW="Default" ENDINCLINATION="22;0;" ID="Arrow_ID_129" STARTARROW="None" STARTINCLINATION="22;0;" SOURCE_LABEL="" MIDDLE_LABEL="ct." TARGET_LABEL="" /></node>
 <node TEXT="cf. Literacy" ID="Freemind_Link_100"   COLOR="#000000" BACKGROUND_COLOR="#FFD9B2" STYLE="bubble" ><edge COLOR="#FFD9B2" /><icon BUILTIN="itmz-bell"/>
 <icon BUILTIN="itmz-hand-thumb-up"/>
 <attribute NAME="Callout" VALUE="{250, 110}"/></node>
